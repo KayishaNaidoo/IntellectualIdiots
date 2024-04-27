@@ -56,7 +56,11 @@ def upload_if_needed(pathname: str) -> list[str]:
 convo = model.start_chat(history=[
   {
     "role": "user",
-    "parts": ["I am going to give you an image of a persons available ingredients. I want you to analyse this image, list the ingredients and recommend a recipe they can do with these ingredients. As an afterthought, I would like you to recommend one or two more ingradients they dont have and a recipe they can make after adding this. For the afterthought, dont make the whole recipe, just teh name\n\n"]
+    "parts": ["I am going to give you an image of a persons available ingredients. I want you to analyze this image, list the ingredients and recommend a recipe they can do with these ingredients. As an afterthought, I would like you to recommend one or two more ingredients they don't have and a recipe they can make after adding this. For the afterthought, don't make the whole recipe, just the name."]
+  },
+  {
+    "role": "model",
+    "parts": ["Sounds like fun! Please share the image of the ingredients and I'll do my best to whip up some recipe recommendations."]
   },
   {
     "role": "user",
@@ -64,19 +68,15 @@ convo = model.start_chat(history=[
   },
   {
     "role": "model",
-    "parts": ["## Ingredient Analysis and Recipe Recommendations:\n\n**Ingredients Identified:**\n\n*   Eggs\n*   Flour\n*   Butter\n*   Milk\n*   Salt\n*   Yeast (appears to be two types: active dry and instant)\n\n**Recipe Recommendation:**\n\nWith these ingredients, you have the foundation for a variety of delicious baked goods.  A classic and versatile option would be **Homemade Dinner Rolls**.  \n\n**Here's a simple recipe to follow:**\n\n**Ingredients:**\n\n*   1 1/2 cups warm milk (around 110°F)\n*   2 teaspoons active dry yeast or instant yeast\n*   1 tablespoon sugar\n*   1 teaspoon salt\n*   1 egg\n*   2 tablespoons melted butter\n*   3 1/2 - 4 cups all-purpose flour\n\n**Instructions:**\n\n1.  In a large bowl, combine warm milk, yeast, and sugar. Let stand for about 5 minutes until foamy.\n2.  Whisk in the salt, egg, and melted butter.\n3.  Gradually add the flour, one cup at a time, mixing until a dough forms.\n4.  Turn the dough out onto a lightly floured surface and knead for 5-7 minutes until smooth and elastic.\n5.  Place the dough in a greased bowl, cover it with a damp cloth, and let it rise in a warm place for about 1 hour, or until doubled in size.\n6.  Punch down the dough and divide it into equal portions (around 12-16 pieces). Shape each portion into a smooth ball.\n7.  Place the rolls on a greased baking sheet, cover them, and let them rise for another 30 minutes.\n8.  Preheat your oven to 375°F (190°C).\n9.  Bake the rolls for 15-20 minutes, or until golden brown.\n10.  Brush with melted butter, if desired, and serve warm.\n\n**Afterthought:**\n\nTo add a touch of sweetness and flavor, consider adding **cinnamon and sugar**.  With these additions, you could create delicious **Cinnamon Rolls**!"]
+    "parts": ["## Ingredient Analysis: \n\nFrom the image, I can see the following ingredients:\n\n*   **Eggs:** A versatile ingredient used for binding, leavening, and adding richness.\n*   **Flour:** The base for many baked goods, providing structure and texture. \n*   **Butter:** Adds flavor and richness, and contributes to tenderness.\n*   **Milk:** Provides moisture and flavor, and can also contribute to browning.\n*   **Sugar:** Adds sweetness and flavor, and can also contribute to texture and browning. \n*   **Salt:** Enhances the flavor of other ingredients and balances sweetness. \n*   **Yeast:** A leavening agent that helps dough rise. \n\n## Recipe Recommendation:\n\nWith these ingredients, a classic and delicious option would be **Homemade Dinner Rolls**. They are perfect for accompanying a meal or enjoying on their own.  \n\n### Afterthought: \n\n**Additional ingredients:** Cinnamon and sugar\n\n**Recipe idea:** Cinnamon Rolls"]
   },
   {
     "role": "user",
-    "parts": ["nOW DO IT FOR THIS\n\n\n"]
-  },
-  {
-    "role": "user",
-    "parts": upload_if_needed("<path>/image1.png")
+    "parts": ["You have to give the recipe as well"]
   },
   {
     "role": "model",
-    "parts": ["## Refrigerator Analysis and Recipe Recommendations:\n\n**Ingredients Identified:**\n\n* **Fruits & Vegetables:** Cantaloupe, watermelon, radishes, green onions, ginger, lettuce (potentially romaine or another variety)\n* **Proteins:** Tofu, eggs (possibly, not fully visible)\n* **Dairy & Condiments:**  Mayonnaise, plain yogurt, coffee creamer (powdered), peanut butter, gochujang (Korean chili paste)\n* **Pantry Staples:** Coconut oil, kombucha, almonds \n\n**Recipe Recommendation:**\n\nGiven the variety of fresh produce and Asian-inspired ingredients, a **Summer Tofu Salad with Peanut-Ginger Dressing** would be a refreshing and flavorful option.\n\n**Here’s how you can throw it together:**\n\n1. **Prepare the tofu:**  Drain and press the tofu to remove excess moisture.  Cube the tofu and pan-fry or bake until golden brown and slightly crispy. \n2. **Assemble the salad:**  In a large bowl, combine chopped romaine lettuce, sliced radishes, and green onions.\n3. **Make the dressing:**  In a small bowl, whisk together peanut butter, water (to thin), grated ginger, a splash of kombucha, coconut oil, and a touch of gochujang for a kick.  Season with salt and pepper to taste.\n4. **Combine:** Toss the salad with the dressing and top with the crispy tofu cubes. \n5. **Garnish:** Add a sprinkle of almonds for extra crunch.  \n\n**Afterthought:** \n\nFor a more substantial meal, consider adding cooked shrimp or chicken.  With the addition of protein, you can enjoy a **Thai-inspired Peanut Salad with Chicken (or Shrimp)**."]
+    "parts": ["My apologies! Here's the recipe for Homemade Dinner Rolls:\n\n## Homemade Dinner Rolls Recipe:\n\n**Ingredients:**\n\n* 2 1/4 teaspoons active dry yeast (1 packet)\n* 1/4 cup warm water (105°F to 115°F)\n* 1/4 cup granulated sugar\n* 1 cup warm milk (105°F to 115°F)\n* 1 large egg\n* 1/4 cup melted butter, cooled slightly\n* 1 teaspoon salt\n* 3 1/2 to 4 cups all-purpose flour\n\n**Instructions:**\n\n1. **Activate the Yeast:** In a small bowl, combine the warm water, sugar, and yeast. Let stand for about 5 minutes until foamy, indicating that the yeast is alive and active. \n\n2. **Combine Wet Ingredients:** In a large bowl, whisk together the warm milk, egg, melted butter, and salt. Add the yeast mixture and whisk until combined.\n\n3. **Add Flour:** Gradually add the flour, one cup at a time, mixing well after each addition. Once the dough starts to come together, turn it out onto a lightly floured surface and knead for about 5-7 minutes until smooth and elastic. Add more flour as needed if the dough is too sticky.\n\n4. **First Rise:** Place the dough in a greased bowl, cover it with a damp cloth or plastic wrap, and let it rise in a warm place for about 1 hour or until doubled in size.\n\n5. **Shape Rolls:** Punch down the dough and divide it into equal portions (about 12-15 pieces). Shape each portion into a smooth ball and place them in a greased baking pan, leaving some space between them for rising.\n\n6. **Second Rise:** Cover the pan loosely and let the rolls rise for another 30-45 minutes until puffy.\n\n7. **Preheat Oven:** Preheat your oven to 375°F (190°C).\n\n8. **Bake:** Bake the rolls for 15-20 minutes or until golden brown.\n\n9. **Serve:** Brush the tops with melted butter (optional) and serve warm. Enjoy!"]
   },
   {
     "role": "user",
@@ -84,23 +84,63 @@ convo = model.start_chat(history=[
   },
   {
     "role": "model",
-    "parts": ["## Three Recipe Options for Your Fridge:\n\nBased on your available ingredients, here are three diverse recipes you could whip up:\n\n**Option 1: Refreshing Summer Rolls with Peanut Dipping Sauce**\n\n*   This option utilizes the fresh vegetables, tofu, and rice paper (assuming you have some). The peanut sauce can be made with peanut butter, ginger, soy sauce (if available), and a touch of sweetener.\n\n**Option 2: Spicy Korean Tofu Scramble with Kimchi and Rice**\n\n*   This recipe takes advantage of the gochujang, tofu, and eggs (if present). Kimchi, a staple in Korean cuisine, would be a fantastic addition if you have it on hand. \n\n**Option 3: Creamy Cantaloupe and Yogurt Smoothie**\n\n*   A perfect way to use the ripe cantaloupe and yogurt. You can add a bit of honey or maple syrup for extra sweetness and blend it into a delicious and healthy drink.\n\n**Which recipe would you like to try?**"]
+    "parts": ["Absolutely! Here are three recipe recommendations based on your available ingredients:\n\n**Option 1: Homemade Dinner Rolls:** Soft, fluffy, and perfect for accompanying any meal. \n\n**Option 2: Buttermilk Pancakes:** A classic breakfast treat that's light, airy, and delicious. You would just need to add some baking powder and buttermilk to your existing ingredients. \n\n**Option 3:  Pound Cake:** A dense and buttery cake with a tender crumb. A simple and elegant dessert option.  \n\nWhich recipe would you like to try?"]
   },
   {
     "role": "user",
-    "parts": ["option 2"]
+    "parts": ["May you also add the durations of the recipes with the recommendations"]
   },
   {
     "role": "model",
-    "parts": ["## Spicy Korean Tofu Scramble with Kimchi and Rice:\n\nThis dish is a flavorful and protein-packed option, perfect for a satisfying meal.\n\n**Ingredients:**\n\n* 1 block firm or extra-firm tofu, drained and pressed\n* 1 tablespoon coconut oil\n* 1/2 cup chopped kimchi\n* 2 green onions, chopped\n* 2 cloves garlic, minced\n* 1 tablespoon gochujang (Korean chili paste)\n* 1 tablespoon soy sauce (or tamari for gluten-free)\n* 1 teaspoon sesame oil\n* 2 eggs (optional)\n* Cooked rice, for serving\n* Sesame seeds and additional green onions, for garnish (optional)\n\n**Instructions:**\n\n1. **Prepare the tofu:** Crumble the tofu into small pieces resembling scrambled eggs.\n2. **Sauté aromatics:** Heat coconut oil in a large skillet or wok over medium heat. Add the kimchi, green onions, and garlic. Sauté for a few minutes until fragrant.\n3. **Add sauce:** Stir in the gochujang and soy sauce, combining well with the kimchi mixture.\n4. **Cook the tofu:** Add the crumbled tofu to the skillet and cook, stirring frequently, until heated through and slightly browned. \n5. **(Optional) Scramble eggs:** If using eggs, push the tofu to the sides of the pan, creating a well in the center. Crack the eggs into the well and scramble until cooked to your liking. Then, incorporate the eggs with the tofu mixture.\n6. **Finish and serve:** Drizzle with sesame oil and give everything a final stir. Serve the tofu scramble over cooked rice and garnish with sesame seeds and additional green onions, if desired. \n\n**Tips:**\n\n* Adjust the amount of gochujang to your desired spice level.\n* You can add other vegetables to the scramble, such as chopped carrots, bell peppers, or spinach. \n* Top with a fried egg for extra richness. \n* If you don't have kimchi, you can substitute with sauerkraut or another fermented vegetable."]
+    "parts": ["Of course! Here are the three recipe recommendations with their approximate durations:\n\n**Option 1: Homemade Dinner Rolls (Approximately 2 hours):** Soft, fluffy, and perfect for accompanying any meal.  \n\n**Option 2: Buttermilk Pancakes (Approximately 30 minutes):** A classic breakfast treat that's light, airy, and delicious. You would just need to add some baking powder and buttermilk to your existing ingredients. \n\n**Option 3:  Pound Cake (Approximately 1 hour 30 minutes):** A dense and buttery cake with a tender crumb. A simple and elegant dessert option.  \n\nWhich recipe would you like to try?"]
   },
   {
     "role": "user",
-    "parts": ["But youre adding things that arent in the fridge"]
+    "parts": ["Option 3"]
   },
   {
     "role": "model",
-    "parts": ["My apologies! You are absolutely right, I got carried away with the recipe and added some ingredients that weren't in the original image. Let's revise the recipe to use only what you have on hand.\n\n## Revised Spicy Korean Tofu Scramble:\n\n**Ingredients:**\n\n* 1 block firm or extra-firm tofu, drained and pressed\n* Coconut oil\n* Gochujang (Korean chili paste)\n* Green onions \n* (Optional) Eggs \n\n**Instructions:**\n\n1. **Prepare the tofu:** Crumble the tofu into small pieces resembling scrambled eggs.\n2. **Cook the tofu:** Heat coconut oil in a large skillet or wok over medium heat. Add the crumbled tofu and cook, stirring frequently, until heated through and slightly browned.\n3. **Add flavor:**  Stir in gochujang to taste, starting with a small amount and adding more for desired spice level. \n4. **(Optional) Scramble eggs:** If using eggs, push the tofu to the sides of the pan, creating a well in the center. Crack the eggs into the well and scramble until cooked to your liking. Then, incorporate the eggs with the tofu mixture.\n5. **Finish and serve:** Garnish with chopped green onions and enjoy!\n\n**Tips:**\n\n* You can experiment with the flavor profile by adding a squeeze of mayonnaise or a sprinkle of powdered coffee creamer for a creamy element.\n* If you happen to have any leftover almonds, consider toasting them and adding them for a bit of crunch.\n\n**Note:**  While this version is simpler, it still utilizes the key Korean flavors and provides a good base.  As you restock your fridge, consider adding ingredients like kimchi, garlic, and soy sauce to create a more complex and authentic Korean dish next time."]
+    "parts": ["## Pound Cake Recipe:\n\n**Ingredients:**\n\n* 1 cup (2 sticks) unsalted butter, softened\n* 3 cups granulated sugar\n* 6 large eggs\n* 3 cups all-purpose flour\n* 1/4 teaspoon salt\n* 1 cup milk\n* 1 teaspoon vanilla extract\n\n**Instructions:**\n\n1. **Preheat Oven and Prep Pan:** Preheat your oven to 325°F (165°C). Grease and flour a 10-inch loaf pan or a bundt pan. \n\n2. **Cream Butter and Sugar:** In a large bowl, cream together the softened butter and sugar until light and fluffy. This usually takes about 3-5 minutes with an electric mixer.\n\n3. **Add Eggs:** Beat in the eggs one at a time, mixing well after each addition. Make sure the eggs are fully incorporated before adding the next. \n\n4. **Whisk Dry Ingredients:** In a separate bowl, whisk together the flour and salt.\n\n5. **Combine Wet and Dry:** Alternately add the dry ingredients and milk to the butter-sugar mixture, beginning and ending with the dry ingredients. Mix until just combined.\n\n6. **Add Vanilla:** Stir in the vanilla extract.\n\n7. **Pour Batter:** Pour the batter into the prepared pan and smooth the top.\n\n8. **Bake:** Bake for approximately 1 hour and 15 minutes to 1 hour and 30 minutes, or until a toothpick inserted into the center comes out clean.\n\n9. **Cool:** Let the cake cool in the pan for about 10 minutes before inverting it onto a wire rack to cool completely.\n\n10. **Serve:** Slice and serve. Enjoy!\n\n**Tips:**\n\n* For a richer flavor, you can substitute 1/2 cup of the milk with sour cream.\n* Add a glaze, frosting, or fresh fruit to enhance the flavor and presentation.\n* To ensure even baking, make sure your butter is softened to room temperature."]
+  },
+  {
+    "role": "user",
+    "parts": ["Can i give you another image?"]
+  },
+  {
+    "role": "model",
+    "parts": ["Absolutely! I'm eager to see what culinary creations we can come up with next. Please feel free to share another image of ingredients."]
+  },
+  {
+    "role": "user",
+    "parts": upload_if_needed("<path>/image1.png")
+  },
+  {
+    "role": "model",
+    "parts": ["## Ingredient Analysis:\n\nBased on the images, here's what I can identify in the refrigerator:\n\n* **Fruits:** Watermelon, cantaloupe, dragonfruit \n* **Vegetables:** Lettuce, radish, cucumber (?)\n* **Dairy & Protein:**  Tofu, yogurt, milk, eggs\n* **Condiments & Oils:** Mayonnaise, peanut butter, gochujang (Korean chili paste), soy bean paste, coconut oil\n* **Beverages:** Kombucha, ginger ale\n* **Other:**  Almonds, flax seeds, rolled oats \n\nWith this diverse range of ingredients, the possibilities are quite exciting! Do you have a preference for a specific type of dish or cuisine?"]
+  },
+  {
+    "role": "user",
+    "parts": ["You are supposed to recommend the recipes"]
+  },
+  {
+    "role": "model",
+    "parts": ["My apologies! Here are a few recipe recommendations based on the identified ingredients:\n\n**Option 1:  Spicy Korean Tofu Scramble (30 minutes):**\n\n* This recipe utilizes tofu, gochujang, soy bean paste, and vegetables you have on hand (radish, cucumber). You can serve it with rice or in lettuce wraps for a low-carb option. \n\n**Option 2: Summer Fruit Salad with Yogurt and Honey (15 minutes):**\n\n* This refreshing and healthy option combines watermelon, cantaloupe, and dragonfruit with a simple yogurt and honey dressing. You can top it with almonds for a bit of crunch. \n\n**Option 3:  Overnight Oats with Berries and Nuts (5 minutes prep, overnight):**\n\n* This no-cook recipe is perfect for a quick and easy breakfast. Combine rolled oats, milk, yogurt, almonds, and flax seeds in a jar. Let it sit overnight and top with fresh berries in the morning. \n\nWhich recipe would you like to try?"]
+  },
+  {
+    "role": "user",
+    "parts": ["I would like to have a Western style meal. Give me an option for that"]
+  },
+  {
+    "role": "model",
+    "parts": ["Considering a Western-style meal, let's see what we can create with the available ingredients...\n\n**Option 4:  Mediterranean Salad with Grilled Tofu (30 minutes):**\n\n* Marinate the tofu in a mixture of olive oil, lemon juice, herbs (if you have any), salt, and pepper. Grill the tofu until golden brown. Toss together a salad with lettuce, cucumber, radish, olives (if available), and a simple vinaigrette. Top the salad with the grilled tofu and crumbled feta cheese (if available).  \n\nWould you like to try this Mediterranean-inspired recipe?"]
+  },
+  {
+    "role": "user",
+    "parts": ["Yes"]
+  },
+  {
+    "role": "model",
+    "parts": ["## Mediterranean Salad with Grilled Tofu Recipe:\n\n**Ingredients:**\n\n* **For the Tofu Marinade:**\n    * 1 block firm or extra-firm tofu, pressed and drained\n    * 2 tablespoons olive oil\n    * 2 tablespoons lemon juice\n    * 1/2 teaspoon dried oregano (optional)\n    * 1/4 teaspoon dried thyme (optional)\n    * Salt and pepper to taste\n* **For the Salad:**\n    * Lettuce of your choice (e.g., romaine, butter lettuce)\n    * 1 cucumber, chopped\n    * A handful of radishes, sliced\n    * A handful of olives (optional)\n    * Crumbled feta cheese (optional)\n* **For the Vinaigrette:**\n    * 2 tablespoons olive oil\n    * 1 tablespoon lemon juice\n    * 1/2 teaspoon Dijon mustard (optional)\n    * Salt and pepper to taste\n\n**Instructions:**\n\n1. **Marinate Tofu:** Cut the tofu into desired shapes (cubes, triangles, etc.). In a shallow dish, whisk together the olive oil, lemon juice, oregano, thyme, salt, and pepper. Add the tofu and marinate for at least 15 minutes, or longer if time allows.\n\n2. **Prepare Salad:** Wash and chop the lettuce. Chop the cucumber and slice the radishes. In a large bowl, combine the lettuce, cucumber, radishes, and olives (if using).\n\n3. **Make Vinaigrette:** In a small bowl or jar, whisk together the olive oil, lemon juice, Dijon mustard (if using), salt, and pepper.\n\n4. **Grill Tofu:** Heat a grill or grill pan over medium heat. Grill the marinated tofu for about 3-5 minutes per side, or until golden brown and slightly crispy.\n\n5. **Assemble Salad:** Drizzle the vinaigrette over the salad and toss to coat. Top with the grilled tofu and crumbled feta cheese (if using). \n\n6. **Serve:** Enjoy immediately as a light and refreshing meal. \n\n**Tips:**\n\n* You can add other vegetables to the salad, such as bell peppers, cherry tomatoes, or red onion.\n* If you don't have fresh herbs, you can use 1/4 teaspoon of dried oregano and thyme.\n* Serve with pita bread or crusty bread on the side."]
   },
   {
     "role": "user",
@@ -108,51 +148,39 @@ convo = model.start_chat(history=[
   },
   {
     "role": "model",
-    "parts": ["## Fridge Analysis and Recipe Recommendations:\n\n**Ingredients Identified:**\n\n* **Prepared Foods:** Falafel (or similar fritters/patties), various leftovers in containers (exact contents unknown)\n* **Vegetables:** Green beans, corn\n* **Grains:** A container of what appears to be a grain like barley or quinoa\n\n**Recipe Options:**\n\nGiven the limited visible ingredients and potential mystery leftovers, the recipe suggestions will be broad and adaptable. The key is to utilize the prepared falafel and vegetables while incorporating the leftovers creatively.\n\n**Option 1: Falafel Bowls with Grain and Vegetable Medley:**\n\n1. **Base:** Prepare the grain (barley/quinoa) according to package instructions if needed.\n2. **Vegetables:** Steam or sauté the green beans and corn until tender-crisp. \n3. **Leftovers:**  Identify the leftover dishes. If they are complementary in flavor and texture, consider incorporating them into the bowl.  For instance, a lentil curry or a roasted vegetable medley could work well.\n4. **Assemble:**  Divide the grain between bowls, top with falafel, vegetables, and a portion of the chosen leftovers. Drizzle with a sauce of your choice (tahini, yogurt-based sauce, or a vinaigrette would all be great options).\n\n**Option 2: Falafel Wraps with Leftover Filling and Fresh Crunch:**\n\n1. **Warm Up:** Heat the falafel as desired (oven, pan-fry, or microwave).\n2. **Wrap Base:** Use tortillas, pita bread, or flatbread as the wrap base. \n3. **Leftovers:** Choose a leftover that could work as a spread or filling. This could be a bean dip, a curried vegetable mash, or even a shredded meat dish.\n4. **Assemble:** Spread the chosen leftover on the wrap, add falafel, green beans, and corn for a fresh crunch. Top with any additional condiments like hot sauce or a squeeze of lemon.\n\n**Option 3: Deconstructed Falafel Salad with Grain and Veggie Salad:**\n\n1. **Salad Base:** Combine the cooked grain and chopped vegetables (green beans and corn) to create a salad base.\n2. **Falafel Croutons:** Break the falafel into bite-sized pieces and toast or pan-fry them for a crunchy element.\n3. **Leftovers:** Depending on the leftover dish, you can either mix it directly into the salad or serve it on the side as a complementary element.\n4. **Dressing:** Choose a dressing that complements the flavors of your salad and leftovers. A lemon vinaigrette, tahini dressing, or yogurt-based dressing would be versatile choices. \n\n**Which option sounds most appealing to you?**"]
+    "parts": ["## Ingredient Analysis: \n\nIt seems we have a minimalist situation here, with the star ingredient being **fresh tomatoes**! While the options are limited, we can still whip up some delicious and simple dishes.  \n\nDo you have any pantry staples like pasta, rice, or bread? This information will help me provide more specific recipe recommendations."]
   },
   {
     "role": "user",
-    "parts": ["Option 2"]
+    "parts": ["From now on, recommend the recipes as soon as the user gives the image"]
   },
   {
     "role": "model",
-    "parts": ["## Falafel Wraps with Leftover Filling and Fresh Crunch:\n\nThis option provides a satisfying and portable meal, perfect for utilizing your prepared falafel and adding some freshness with the vegetables.\n\n**Ingredients:**\n\n* Falafel \n* Tortillas, pita bread, or flatbread\n* Leftover filling of your choice (bean dip, curried vegetables, shredded meat, etc.)\n* Green beans\n* Corn\n* Additional condiments (hot sauce, lemon wedges, tahini sauce, etc.)\n\n**Instructions:**\n\n1. **Prep the Falafel:**  Heat the falafel using your preferred method (oven, pan-fry, or microwave) until warmed through and slightly crispy. \n2. **Prepare Vegetables (optional):** If desired, lightly steam or sauté the green beans and corn for a tender-crisp texture.  This step is optional, and you can enjoy them raw if preferred.\n3. **Warm the Wraps:** Briefly warm the tortillas or pita bread to make them pliable. \n4. **Assemble the Wraps:** Spread a generous amount of your chosen leftover filling onto each wrap. Top with the warmed falafel, green beans, and corn. \n5. **Finishing Touches:** Drizzle with your favorite condiments like hot sauce, tahini sauce, or a squeeze of fresh lemon juice. \n\n**Tips:**\n\n* **Get Creative with Fillings:**  Don't be afraid to experiment with different leftover combinations.  Almost any flavorful leftover can be repurposed into a delicious wrap filling.\n* **Add Fresh Herbs:** If you have fresh herbs on hand, such as parsley, cilantro, or mint, chop them up and add them to the wraps for an extra burst of freshness.\n* **Make it a Meal Prep Option:**  These wraps are perfect for meal prepping. Assemble them in advance and store them in the refrigerator for a quick and easy lunch or dinner option throughout the week. \n\n**Enjoy your delicious and resourceful falafel wraps!**"]
+    "parts": ["## Recipe Recommendations:\n\nWith just fresh tomatoes, the possibilities are focused but still delicious! Here are a couple of ideas:\n\n**Option 1: Simple Tomato Salad (10 minutes):**\n\n* Slice the tomatoes and arrange them on a plate. Drizzle with olive oil, balsamic vinegar, and a sprinkle of salt and pepper. For an extra touch, add some fresh basil or oregano if you have any.\n\n**Option 2: Tomato Bruschetta (15 minutes):**\n\n* Dice the tomatoes and mix them with minced garlic, olive oil, balsamic vinegar, and chopped basil. Toast some bread slices and spoon the tomato mixture on top. \n\nWhich recipe would you like to try?"]
+  },
+  {
+    "role": "user",
+    "parts": ["From now on, also specify when you use ingredients that are not present"]
+  },
+  {
+    "role": "model",
+    "parts": ["Understood! I'll make sure to point out any additional ingredients needed for the recipes.\n\n## Recipe Recommendations: \n\nWith just fresh tomatoes, the possibilities are focused but still delicious! Here are a couple of ideas:\n\n**Option 1: Simple Tomato Salad (10 minutes):**\n\n* Slice the tomatoes and arrange them on a plate. Drizzle with olive oil, balsamic vinegar (if available), and a sprinkle of salt and pepper. For an extra touch, add some fresh basil or oregano (if available).\n\n**Option 2: Tomato Bruschetta (15 minutes):**\n\n* Dice the tomatoes and mix them with minced garlic (if available), olive oil, balsamic vinegar (if available), and chopped basil (if available). Toast some bread slices (not pictured, assuming needed) and spoon the tomato mixture on top. \n\nWhich recipe would you like to try?"]
+  },
+  {
+    "role": "user",
+    "parts": ["That's good"]
+  },
+  {
+    "role": "model",
+    "parts": ["Great! Let me know if you'd like the full recipe for the option you choose."]
   },
   {
     "role": "user",
     "parts": upload_if_needed("<path>/image3.png")
   },
   {
-    "role": "user",
-    "parts": ["​"]
-  },
-  {
     "role": "model",
-    "parts": ["## Empty Fridge Challenge: Pantry Raid!\n\nIt seems we have an empty fridge situation! But before resorting to takeout, let's explore the pantry and see what hidden treasures we can find.  Pantry staples can often be combined to create simple yet satisfying meals.\n\n**Potential Pantry Staples:**\n\n* **Canned Goods:** Beans, lentils, chickpeas, tuna, vegetables (corn, tomatoes, etc.), soup\n* **Grains:** Rice, pasta, quinoa, oats\n* **Pasta Sauces:** Tomato sauce, pesto\n* **Oils & Vinegars:** Olive oil, vinegar, salad dressings\n* **Spices & Herbs:** Dried herbs, spices, salt, pepper\n* **Baking Supplies:** Flour, sugar, baking powder, baking soda\n\n**Recipe Ideas Based on Potential Pantry Finds:**\n\n**1. Pasta with Pantry Sauce:**\n\n* **Base:** Cook your choice of pasta (spaghetti, penne, etc.).\n* **Sauce:** Use a jar of pasta sauce or get creative! Sauté some canned tomatoes with garlic, olive oil, and dried herbs for a quick homemade sauce.\n* **Protein Boost:** If you have canned tuna or chickpeas, add them to the sauce for extra protein.\n\n**2. Beans and Rice Bowl:**\n\n* **Base:** Cook rice and canned beans (black beans, kidney beans, etc.) separately.\n* **Flavor:**  Sauté onions and garlic with spices like cumin, chili powder, or paprika. Add canned corn or tomatoes for extra flavor and texture.\n* **Toppings:** Top with a dollop of plain yogurt or a simple vinaigrette made with olive oil and vinegar.\n\n**3. Quick and Easy Soup:**\n\n* **Base:** Use canned soup as a base or create your own broth by simmering vegetable scraps or bouillon cubes in water. \n* **Additions:** Add canned vegetables, beans, or lentils for a hearty soup. \n* **Flavor Boost:** Enhance the flavor with dried herbs, spices, and a splash of vinegar or lemon juice.\n\n**4. Pantry Frittata:**\n\n* **Base:** Whisk together eggs with a splash of milk or water.\n* **Fillings:**  Get creative with whatever vegetables and protein you have on hand! Leftover cooked potatoes, canned corn, or even frozen vegetables can work well. \n* **Cheese, Please:** If you have any cheese, sprinkle it on top for extra flavor.\n* **Cook:** Pour the mixture into a greased oven-safe skillet and bake until set. \n\n**Remember, these are just starting points!  Feel free to adapt and improvise based on your specific pantry finds.**\n\n**Let me know what you discover in your pantry, and we can create a more tailored recipe together!**"]
-  },
-  {
-    "role": "user",
-    "parts": upload_if_needed("<path>/image4.png")
-  },
-  {
-    "role": "user",
-    "parts": ["​"]
-  },
-  {
-    "role": "model",
-    "parts": ["## Beverage Bonanza: Mocktail Mania! \n\nIt seems we have a treasure trove of beverages on hand! While there might not be much in the way of \"cooking\" ingredients, we can certainly whip up some delicious and refreshing mocktails with this assortment of drinks and juices.\n\n**Potential Mocktail Combinations:**\n\n**1. Tropical Sunrise:**\n\n* **Base:** Blend mango juice or orange juice with a handful of ice for a slushy base.\n* **Gradient Effect:** Slowly pour grenadine syrup down the side of the glass to create a layered sunrise effect.\n* **Garnish:** Top with a pineapple wedge or a maraschino cherry.\n\n**2. Sparkling Berry Bliss:**\n\n* **Base:** Mix cranberry juice or any berry-flavored juice with sparkling water for a fizzy base.\n* **Sweetness:** Add a squeeze of lemon or lime juice and a touch of honey or agave syrup to balance the tartness.\n* **Garnish:** Add fresh berries or a lemon/lime wedge to the glass.\n\n**3. Creamy Orange Dream:**\n\n* **Base:** Blend orange juice with a scoop of vanilla ice cream (if available) for a creamy treat.\n* **Spice it Up:**  Add a dash of cinnamon or nutmeg for a warm, aromatic twist.\n* **Garnish:**  Top with whipped cream and a sprinkle of cinnamon. \n\n**4. Classic Shirley Temple:**\n\n* **Base:** Combine ginger ale with a splash of grenadine syrup for a sweet and bubbly drink. \n* **Citrus Twist:** Add a squeeze of lime or lemon juice for a refreshing tang.\n* **Garnish:**  Serve with a maraschino cherry and a lime wedge.\n\n**5. Customized Soda Creations:**\n\n* **Mix and Match:** Experiment with combining different sodas and juices to create your own unique flavor combinations. \n* **Fruity Fizz:** Add a splash of fruit juice to your favorite soda for a fruity twist.\n* **Herbal Infusion:** Muddle fresh herbs like mint or basil in the bottom of the glass before adding your chosen beverage.\n\n**Remember, these are just a few ideas to get you started. Feel free to get creative and experiment with different flavor combinations to discover your own signature mocktails!**"]
-  },
-  {
-    "role": "user",
-    "parts": upload_if_needed("<path>/image5.png")
-  },
-  {
-    "role": "user",
-    "parts": ["​"]
-  },
-  {
-    "role": "model",
-    "parts": ["## Tomato Time: From Simple to Savory!\n\nA fridge full of tomatoes presents a bounty of culinary possibilities! Tomatoes are incredibly versatile and can be the star of a dish or a supporting ingredient. Let's explore some options depending on your pantry staples and desired level of complexity.\n\n**Simple Tomato Delights:**\n\n* **Caprese Salad:**  The classic combination of sliced tomatoes, fresh mozzarella, and basil leaves drizzled with olive oil and balsamic vinegar. A simple yet elegant appetizer or side dish.\n* **Tomato Sandwiches:**  Slice tomatoes and layer them on your favorite bread with mayonnaise, mustard, or a spread of your choice. Add lettuce, cheese, or other desired fillings.\n* **Gazpacho:**  A chilled tomato soup perfect for a refreshing summer meal. Blend tomatoes with cucumber, bell pepper, onion, garlic, and herbs for a flavorful and healthy soup. \n\n**Savory Tomato Creations:**\n\n* **Tomato Pasta Sauce:**  Simmer chopped tomatoes with garlic, onions, herbs, and spices for a delicious homemade pasta sauce. Add ground meat, sausage, or vegetables for a heartier sauce. \n* **Stuffed Tomatoes:**  Hollow out tomatoes and fill them with a mixture of cooked rice, vegetables, and herbs. Top with cheese and bake until tender.\n* **Shakshuka:** A flavorful dish with eggs poached in a sauce of tomatoes, peppers, onions, and spices.  Serve with crusty bread for dipping.\n\n**Pantry Raid Additions:** \n\n* **Pasta:**  Combine your tomato sauce with cooked pasta for a classic Italian meal.\n* **Rice:** Serve your tomato-based dish over a bed of fluffy rice for a satisfying meal.\n* **Canned Beans:**  Add canned beans like chickpeas or kidney beans to your tomato sauce for a protein boost.\n* **Tortillas:** Make a tomato-based salsa and enjoy with tortilla chips or use it as a topping for tacos. \n\n**Additional Tips:**\n\n* **Ripeness Matters:**  Use ripe, flavorful tomatoes for the best results. \n* **Variety is Key:**  Explore different types of tomatoes (cherry tomatoes, heirloom tomatoes, etc.) for unique flavors and textures.\n* **Fresh Herbs:**  Fresh herbs like basil, oregano, and thyme pair beautifully with tomatoes. \n\n**Let your culinary creativity shine and enjoy the abundance of tomato-inspired dishes!**"]
+    "parts": ["Great! Let me know if you'd like the full recipe for the option you choose."]
   },
 ])
 
